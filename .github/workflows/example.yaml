@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Run app using docker compose
         run: cd example_app && docker compose up -d
-      - name: Make request using docker
-        run: docker run --network container:app-server appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5000/
+      # - name: Make request using docker
+      #   run: docker run --network container:app-server appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5000/
       - name: Make a request to the app
         run: curl --retry 10 --max-time 10 localhost:8000
