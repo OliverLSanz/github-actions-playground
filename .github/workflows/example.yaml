@@ -12,6 +12,6 @@ jobs:
       # - name: Make request using docker
       #   run: docker run --network container:app-server appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5000/
       - name: Check curl version
-        run: curl -v
+        run: curl -V
       - name: Make a request to the app
         run: curl --retry 10 --retry-delay 5 --retry-all-errors localhost:8000
