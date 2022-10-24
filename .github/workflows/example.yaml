@@ -4,6 +4,7 @@ on: [push]
 jobs:
   test-docker-compose:
     runs-on: ubuntu-latest
+    environment: ENVIRONMENT
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -19,4 +20,4 @@ jobs:
           retry_wait_seconds: 5
           command: curl localhost:8000
       - name: Count secret characters
-        run: echo "${{ ENVIRONMENT.SECRET1 }}" | wc
+        run: echo "${{ secrets.SECRET1 }}" | wc
