@@ -18,3 +18,5 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 5
           command: curl localhost:8000
+      - name: Count secret characters
+        run: echo "${{ secrets.SECRET1 }}" | wc
